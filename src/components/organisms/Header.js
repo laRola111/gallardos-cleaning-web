@@ -7,6 +7,7 @@ import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { HiOutlineMenu, HiOutlineX } from 'react-icons/hi';
 import logo from "../../../public/gallardoLogo.png"
+import LanguageSwitcher from '../ui/LanguageSwitcher';
 
 export default function Header({ lang, dict }) {
   const pathname = usePathname();
@@ -95,9 +96,9 @@ export default function Header({ lang, dict }) {
 
           {/* Botones Derecha (Idioma, Contacto Rápido, Menú Móvil) */}
           <div className="flex items-center space-x-4">
-            {/* <div className="hidden md:block"> */}
-              {/* <LanguageSwitcher />  // Placeholder para el switcher */}
-            {/* </div> */}
+            <div className="hidden md:block">
+              <LanguageSwitcher /> 
+            </div>
              <div className="hidden sm:block">
                  {/* Botón de Contacto Rápido podría ir aquí */}
              </div>
@@ -130,9 +131,9 @@ export default function Header({ lang, dict }) {
               {link.name}
             </Link>
           ))}
-          {/* <div className="mt-8"> */}
-             {/* <LanguageSwitcher /> */}
-          {/* </div> */}
+          <div className="mt-8">
+             <LanguageSwitcher />
+          </div>
         </div>
       </div>
     </>
