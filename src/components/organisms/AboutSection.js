@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 
 // Placeholder - Reemplaza con la ruta a tu imagen real si la tienes
-import logo from "../../../public/gallardoLogo.png"
+import imagen from "../../../public/imagenAbout.webp"
 
 
 export default function AboutSection({ lang, dict }) {
@@ -40,7 +40,7 @@ export default function AboutSection({ lang, dict }) {
             className="relative aspect-[4/3] rounded-lg overflow-hidden shadow-lg"
           >
             <Image
-              src={logo} // Usa la variable definida arriba
+              src={imagen} // Usa la variable definida arriba
               alt={dict.imageAlt}
               fill
               style={{ objectFit: 'cover' }}

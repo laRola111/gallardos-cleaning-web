@@ -4,6 +4,7 @@
 import Image from 'next/image';
 import Button from '@/components/ui/Button';
 import { motion } from 'framer-motion';
+import banner from "../../../public/bannerGallardos.webp"
 
 // NO necesitas importar la imagen así:
 // import heroBg from '/images/hero-background.jpg'; // <-- ELIMINA ESTA LÍNEA
@@ -22,7 +23,7 @@ export default function HeroSection({ lang, dict }) {
       <div className="absolute inset-0 z-0">
         <Image
           // USA LA RUTA ABSOLUTA DESDE /public
-          src="/images/hero-background.jpg" // <-- CORRECCIÓN AQUÍ
+          src={banner}
           alt={dict.heroAlt || "Fondo de servicio de limpieza profesional"}
           fill
           style={{ objectFit: 'cover' }}
