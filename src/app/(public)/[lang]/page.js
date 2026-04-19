@@ -10,7 +10,8 @@ import ServiceAreaSection from '@/components/organisms/ServiceAreaSection';
 import FAQSection from '@/components/organisms/FAQSection';
 import ContactSection from '@/components/organisms/ContactSection'; // Importar la sección
 
-export default async function HomePage({ params: { lang } }) {
+export default async function HomePage({ params }) {
+  const { lang } = await params;
   const dict = await getDictionary(lang);
 
   return (

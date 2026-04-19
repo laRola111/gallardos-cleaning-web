@@ -4,11 +4,10 @@ import { Resend } from 'resend';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-// Email del negocio que recibirá los mensajes
-const BUSINESS_EMAIL = 'gallardoscleaninglpz@gmail.com';
-// Desde qué dirección saldrán los correos (debe ser un dominio verificado en Resend,
-// o usar onboarding@resend.dev para pruebas sin dominio propio)
-const FROM_EMAIL = process.env.FROM_EMAIL || 'onboarding@resend.dev';
+// Email del negocio que recibe las notificaciones de contacto
+const BUSINESS_EMAIL = process.env.CONTACT_RECIPIENT_EMAIL || 'gallardoscleaninglpz@gmail.com';
+// Dirección From — usa el dominio verificado gallardoscleaning.com
+const FROM_EMAIL = process.env.FROM_EMAIL || 'noreply@gallardoscleaning.com';
 
 export async function POST(request) {
   try {
@@ -78,6 +77,7 @@ export async function POST(request) {
     });
 
     // --- Email de confirmación al cliente ---
+    // Con dominio verificado podemos enviar al email real del usuario
     const clientEmail = resend.emails.send({
       from: FROM_EMAIL,
       to: email,

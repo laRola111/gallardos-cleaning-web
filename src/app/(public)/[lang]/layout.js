@@ -3,7 +3,8 @@ import Header from '@/components/organisms/Header';
 import Footer from '@/components/organisms/Footer';
 import { getDictionary } from '@/lib/dictionaries';
 
-export default async function LangLayout({ children, params: { lang } }) {
+export default async function LangLayout({ children, params }) {
+  const { lang } = await params;
   const dict = await getDictionary(lang); // dict contiene todo (navbar, footer, etc.)
 
   return (
