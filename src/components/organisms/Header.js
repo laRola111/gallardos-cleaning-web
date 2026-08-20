@@ -1,7 +1,7 @@
 // src/components/organisms/Header.js
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
@@ -13,20 +13,19 @@ export default function Header({ lang, dict }) {
   const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
-  const [lastYPos, setLastYPos] = useState(0);
+  const lastYPosRef = useRef(0);
 
-  // Efecto para visibilidad del header al hacer scroll
+  // Efecto para visibilidad del header al hacer scroll (sin stale closure)
   useEffect(() => {
     const handleScroll = () => {
       const currentYPos = window.scrollY;
-      const isScrollingUp = currentYPos < lastYPos;
-      // Hacer visible si se sube el scroll o si está muy cerca del top
+      const isScrollingUp = currentYPos < lastYPosRef.current;
       setIsVisible(isScrollingUp || currentYPos < 50);
-      setLastYPos(currentYPos);
+      lastYPosRef.current = currentYPos;
     };
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [lastYPos]);
+  }, []); // sin dependencias — ref no necesita estar en el array
 
   // Efecto para cerrar menú al cambiar de ruta
   useEffect(() => {

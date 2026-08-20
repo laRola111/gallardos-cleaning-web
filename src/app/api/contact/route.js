@@ -91,7 +91,7 @@ export async function POST(request) {
             <p style="color: #374151; font-size: 16px;">Hemos recibido tu mensaje y nos pondremos en contacto contigo a la brevedad.</p>
             <p style="color: #374151; font-size: 16px;">Mientras tanto, puedes contactarnos directamente:</p>
             <ul style="color: #374151; font-size: 15px; line-height: 1.8;">
-              <li>📞 Teléfono: <a href="tel:737-618-8548" style="color: #2a3a6a;">737-618-8548</a></li>
+              <li>📞 Teléfono: <a href="tel:737-703-6954" style="color: #2a3a6a;">737-703-6954</a></li>
               <li>📘 Facebook: <a href="https://www.facebook.com/GallardosCleaning" style="color: #2a3a6a;">Gallardos Cleaning</a></li>
             </ul>
             <hr style="border: none; border-top: 1px solid #e5e7eb; margin: 20px 0;" />

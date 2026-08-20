@@ -3,18 +3,38 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Establecer colores base para light mode */
-body {
-  @apply bg-background text-foreground; /* Usa los colores definidos en tailwind.config.js */
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* ── Scroll suave global ──────────────────────────────────────────────────── */
+html {
+  scroll-behavior: smooth;
 }
 
-/* Opcional: Estilos base adicionales si los necesitas */
+/* ── Colores base para light mode ─────────────────────────────────────────── */
+body {
+  @apply bg-background text-foreground;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* Evita layout shifts por scrollbar en desktop */
+  scrollbar-gutter: stable;
+}
+
+/* ── Headings ─────────────────────────────────────────────────────────────── */
 h1, h2, h3, h4, h5, h6 {
   @apply text-foreground;
 }
 
-a {
-  @apply text-primary hover:text-primary-light; /* Ejemplo de uso de colores */
+/* ── Links — solo aplica fuera de componentes con estilos propios ─────────── */
+/* Se limita a elementos <a> que NO tienen clase explícita de Tailwind */
+a:not([class]) {
+  @apply text-primary hover:text-primary-light;
+}
+
+/* ── Mejora de rendimiento: reduce repaints al hacer scroll ───────────────── */
+section {
+  contain: layout style;
+}
+
+/* ── Focus visible accesible ─────────────────────────────────────────────── */
+:focus-visible {
+  outline: 2px solid #2a3a6a;
+  outline-offset: 2px;
 }

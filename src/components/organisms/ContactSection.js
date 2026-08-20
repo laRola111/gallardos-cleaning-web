@@ -10,7 +10,7 @@ import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaFacebookF, FaCheckCircle, FaE
 
 // Datos de contacto
 const contactData = {
-  phone: '737-618-8548',
+  phone: '737-703-6954',
   email: 'gallardoscleaninglpz@gmail.com',
   address: '9201 Cameron rd Austin Texas 78754',
   facebook: 'https://www.facebook.com/GallardosCleaning',

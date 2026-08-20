@@ -44,7 +44,7 @@ export default function AboutSection({ lang, dict }) {
               alt={dict.imageAlt}
               fill
               style={{ objectFit: 'cover' }}
-              sizes="(max-width: 400px) 50vw, 10vw"
+              sizes="(max-width: 768px) 100vw, 50vw"
             />
           </motion.div>
         </div>

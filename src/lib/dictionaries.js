@@ -1,15 +1,18 @@
 // src/lib/dictionaries.js
-// Importamos 'dynamic' de 'next/dynamic' para cargar los diccionarios
-import dynamic from 'next/dynamic';
-
-// Usamos import() dinámico para cargar solo el diccionario necesario
+// Carga dinámica de diccionarios: solo se importa el idioma necesario,
+// reduciendo el bundle por idioma (tree-shaking efectivo en el servidor).
 const dictionaries = {
-  en: () => import('@/dictionaries/en.js').then((module) => module.dictionary),
-  es: () => import('@/dictionaries/es.js').then((module) => module.dictionary),
+  en: () => import('@/dictionaries/en.js').then((m) => m.dictionary),
+  es: () => import('@/dictionaries/es.js').then((m) => m.dictionary),
 };
 
+/**
+ * Devuelve el diccionario para el idioma dado.
+ * Si el idioma no existe, cae al español como idioma por defecto.
+ * @param {string} lang - Código de idioma ('en' | 'es')
+ * @returns {Promise<object>} Diccionario de traducciones
+ */
 export const getDictionary = async (lang) => {
-  // Si el idioma no es 'en' o 'es', usamos 'es' por defecto.
-  const langKey = dictionaries[lang] ? lang : 'es';
-  return dictionaries[langKey]();
+  const loader = dictionaries[lang] ?? dictionaries['es'];
+  return loader();
 };

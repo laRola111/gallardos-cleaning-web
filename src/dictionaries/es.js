@@ -20,6 +20,14 @@ export const dictionary = {
     heroButton: "Obtén tu Cotización Gratis",
     heroAlt: "Equipo de limpieza profesional trabajando",
   },
+  videos: { // SECCIÓN VIDEOS — después del hero
+    sectionTitle: 'Mira Nuestro Trabajo en Acción',
+    sectionSubtitle: 'Descubre cómo Gallardos Cleaning transforma espacios en ambientes impecables en Austin, TX.',
+    video1Title: 'Servicio Profesional de Limpieza — Gallardos Cleaning Austin',
+    video1Desc: 'Nuestro equipo brindando limpieza residencial de alta calidad en Austin, Texas.',
+    video2Title: 'Resultados de Limpieza Profunda — Gallardos Cleaning Austin TX',
+    video2Desc: 'Mira los increíbles resultados de nuestro servicio de limpieza profunda.',
+  },
   services: { // NUEVA SECCIÓN
     sectionTitle: "Nuestros Servicios de Limpieza",
     sectionSubtitle: "Ofrecemos soluciones adaptadas a cada necesidad, garantizando espacios impecables y frescos.",

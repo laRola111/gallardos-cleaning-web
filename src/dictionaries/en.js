@@ -20,6 +20,14 @@ export const dictionary = {
     heroButton: "Get Your Free Quote",
     heroAlt: "Professional cleaning team working",
   },
+  videos: { // VIDEO SECTION — after hero
+    sectionTitle: 'See Our Work in Action',
+    sectionSubtitle: 'Watch how Gallardos Cleaning transforms spaces into spotless environments in Austin, TX.',
+    video1Title: 'Professional Cleaning Service — Gallardos Cleaning Austin',
+    video1Desc: 'Our team delivering high-quality residential cleaning in Austin, Texas.',
+    video2Title: 'Deep Cleaning Results — Gallardos Cleaning Austin TX',
+    video2Desc: 'See the incredible results of our deep cleaning service — before and after.',
+  },
   services: { // NEW SECTION
     sectionTitle: "Our Cleaning Services",
     sectionSubtitle: "We offer tailored solutions for every need, ensuring spotless and fresh spaces.",
